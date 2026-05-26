@@ -2,12 +2,11 @@ import { S3Client, GetObjectCommand } from "@aws-sdk/client-s3";
 import { NextRequest, NextResponse } from "next/server";
 
 const client = new S3Client({
-  region: process.env.B2_REGION!,
-  endpoint: process.env.B2_ENDPOINT!,
-  forcePathStyle: true,
+  region: "auto",
+  endpoint: `https://${process.env.R2_ACCOUNT_ID}.r2.cloudflarestorage.com`,
   credentials: {
-    accessKeyId: process.env.B2_ACCESS_KEY_ID!,
-    secretAccessKey: process.env.B2_SECRET_ACCESS_KEY!,
+    accessKeyId: process.env.R2_ACCESS_KEY_ID!,
+    secretAccessKey: process.env.R2_SECRET_ACCESS_KEY!,
   },
 });
 
@@ -17,7 +16,7 @@ export async function GET(request: NextRequest) {
 
   try {
     const command = new GetObjectCommand({
-      Bucket: process.env.B2_BUCKET_NAME!,
+      Bucket: process.env.R2_BUCKET_NAME!,
       Key: decodeURIComponent(key),
     });
 
