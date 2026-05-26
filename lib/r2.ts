@@ -12,14 +12,12 @@ const r2Client = new S3Client({
   },
 });
 
-export const ALBUMS = ["prewedding", "ceremony", "portrait", "detail"] as const;
+export const ALBUMS = ["prewedding", "ceremony"] as const;
 export type Album = (typeof ALBUMS)[number];
 
 export const ALBUM_LABELS: Record<Album, string> = {
   prewedding: "Pre-Wedding",
   ceremony: "Ceremony",
-  portrait: "Portrait",
-  detail: "Detail",
 };
 
 export interface PhotoItem {
