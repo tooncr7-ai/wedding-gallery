@@ -22,8 +22,9 @@ export async function GET(request: NextRequest) {
 
     const response = await client.send(command);
     const bytes = await response.Body?.transformToByteArray();
+    const buffer = bytes ? Buffer.from(bytes) : null;
 
-    return new NextResponse(bytes, {
+    return new NextResponse(buffer, {
       headers: {
         "Content-Type": response.ContentType || "image/jpeg",
         "Cache-Control": "public, max-age=86400, stale-while-revalidate=604800",
