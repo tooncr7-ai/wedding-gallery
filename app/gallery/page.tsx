@@ -32,7 +32,7 @@ export default async function GalleryPage() {
           className="text-5xl sm:text-6xl text-[#3a3333] leading-none mb-4"
           style={{ fontFamily: "'Cormorant Garamond', Georgia, serif", fontWeight: 300 }}
         >
-          Our Gallery
+          Memorymhee
         </h2>
 
         <div className="flex items-center justify-center gap-4 mt-6 mb-2">
