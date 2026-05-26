@@ -14,22 +14,36 @@ interface AlbumCardProps {
 export default function AlbumCard({ album, photoUrls, photoCount }: AlbumCardProps) {
   const [current, setCurrent] = useState(0);
   const [fade, setFade] = useState(true);
+  const [shuffled, setShuffled] = useState<string[]>([]);
 
   const hasPhotos = photoUrls.length > 0;
 
+  // สุ่มลำดับรูปตอน mount
   useEffect(() => {
-    if (photoUrls.length <= 1) return;
+    const arr = [...photoUrls].sort(() => Math.random() - 0.5);
+    setShuffled(arr);
+  }, [photoUrls]);
+
+  useEffect(() => {
+    if (shuffled.length <= 1) return;
 
     const interval = setInterval(() => {
       setFade(false);
       setTimeout(() => {
-        setCurrent((prev) => (prev + 1) % photoUrls.length);
+        setCurrent((prev) => {
+          // สุ่มรูปถัดไป (ไม่ซ้ำรูปปัจจุบัน)
+          let next = prev;
+          while (next === prev && shuffled.length > 1) {
+            next = Math.floor(Math.random() * shuffled.length);
+          }
+          return next;
+        });
         setFade(true);
       }, 600);
-    }, 3500);
+    }, 3000);
 
     return () => clearInterval(interval);
-  }, [photoUrls.length]);
+  }, [shuffled]);
 
   return (
     <Link
@@ -41,7 +55,7 @@ export default function AlbumCard({ album, photoUrls, photoCount }: AlbumCardPro
         {/* Slideshow images */}
         {hasPhotos ? (
           <Image
-            src={photoUrls[current]}
+            src={shuffled[current] ?? photoUrls[0]}
             alt={ALBUM_LABELS[album]}
             fill
             sizes="(max-width: 640px) 100vw, 50vw"
@@ -60,9 +74,9 @@ export default function AlbumCard({ album, photoUrls, photoCount }: AlbumCardPro
         <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent" />
 
         {/* Dot indicators */}
-        {photoUrls.length > 1 && (
+        {shuffled.length > 1 && (
           <div className="absolute bottom-20 left-1/2 -translate-x-1/2 flex gap-1.5">
-            {photoUrls.map((_, i) => (
+            {shuffled.slice(0, 8).map((_, i) => (
               <div
                 key={i}
                 className="rounded-full transition-all duration-300"

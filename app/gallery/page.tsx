@@ -12,8 +12,8 @@ export default async function GalleryPage() {
     return {
       album,
       photoCount: photos.length,
-      // ส่งสูงสุด 8 รูปสำหรับ slideshow
-      photoUrls: photos.slice(0, 8).map((p) => p.url),
+      // ส่งทุกรูปสำหรับ slideshow สุ่ม
+      photoUrls: photos.map((p) => p.url),
     };
   });
 
