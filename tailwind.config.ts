@@ -11,11 +11,11 @@ const config: Config = {
       colors: {
         cream: "#FAF7F2",
         "warm-white": "#FFFBF5",
-        "dusty-rose": "#C9A0A0",
-        "dusty-rose-light": "#E8D0D0",
+        "dusty-rose": "#7B1A2A",
+        "dusty-rose-light": "#B85C6E",
         "sage": "#8FAF8F",
         "sage-light": "#C4D9C4",
-        "blush": "#F2E4E4",
+        "blush": "#F5E8EA",
       },
       fontFamily: {
         cormorant: ["Cormorant Garamond", "Georgia", "serif"],

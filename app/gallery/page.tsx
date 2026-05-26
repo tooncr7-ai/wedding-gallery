@@ -63,7 +63,7 @@ export default async function GalleryPage() {
       {/* Footer */}
       <footer className="text-center pb-12">
         <p className="text-[#c5b0b0] text-[10px] tracking-widest uppercase font-dmsans">
-          Arisa &amp; Napat · 26.07.2025
+          Ananya &amp; Atip · 25.05.2025
         </p>
       </footer>
     </main>

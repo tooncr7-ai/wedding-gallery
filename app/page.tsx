@@ -34,9 +34,9 @@ export default function HomePage() {
           className="text-6xl sm:text-7xl md:text-8xl text-[#3a3333] leading-none mb-4"
           style={{ fontFamily: "'Cormorant Garamond', Georgia, serif", fontWeight: 300 }}
         >
-          Arisa
+          Ananya
           <span className="block text-dusty-rose italic" style={{ fontWeight: 300 }}>
-            &amp; Napat
+            &amp; Atip
           </span>
         </h1>
 
@@ -45,7 +45,7 @@ export default function HomePage() {
           className="text-[#8a7070] tracking-widest text-sm font-light mt-6 mb-12"
           style={{ fontFamily: "'DM Sans', system-ui, sans-serif" }}
         >
-          26 · 07 · 2025
+          25 · 05 · 2025
         </p>
 
         {/* Divider */}
