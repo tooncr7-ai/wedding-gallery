@@ -76,7 +76,7 @@ export default function HomePage() {
         className="absolute bottom-6 right-8 text-[10px] tracking-widest text-[#c5b0b0] uppercase opacity-60"
         style={{ fontFamily: "'DM Sans', system-ui, sans-serif" }}
       >
-        Chiang Mai, Thailand
+        Si Sa Ket, Thailand
       </p>
     </main>
   );
