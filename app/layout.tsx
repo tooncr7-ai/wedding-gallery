@@ -3,10 +3,10 @@ import "./globals.css";
 import RevealOnScroll from "@/components/RevealOnScroll";
 
 export const metadata: Metadata = {
-  title: "Wedding Gallery",
+  title: "Memorymhee",
   description: "A beautiful collection of wedding memories",
   openGraph: {
-    title: "Wedding Gallery",
+    title: "Memorymhee",
     description: "A beautiful collection of wedding memories",
     type: "website",
     images: [
