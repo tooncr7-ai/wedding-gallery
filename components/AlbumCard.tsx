@@ -11,8 +11,8 @@ interface AlbumCardProps {
 }
 
 const ALBUM_ICONS: Record<Album, string> = {
-  ceremony: "◇",
-  reception: "◈",
+  prewedding: "◇",
+  ceremony: "◈",
   portrait: "○",
   detail: "◻",
 };
